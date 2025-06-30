@@ -1,0 +1,52 @@
+// Pin definitions
+const int buttonPin = 2;    // First button pin
+const int buttonPin1 = 3;   // Second button pin
+const int buttonPin2 = 4;   // Third button pin
+const int ledPin = 11;      // First LED pin
+const int ledPin1 = 12;     // Second LED pin
+const int ledPin2 = 13;     // Third LED pin
+
+// Variables for button states
+int buttonState = 0;
+int buttonState1 = 0;
+int buttonState2 = 0;
+
+void setup() {
+    // Initialize LED pins as outputs
+    pinMode(ledPin, OUTPUT);
+    pinMode(ledPin1, OUTPUT);
+    pinMode(ledPin2, OUTPUT);
+
+    // Initialize button pins as inputs
+    pinMode(buttonPin, INPUT);
+    pinMode(buttonPin1, INPUT);
+    pinMode(buttonPin2, INPUT);
+}
+
+void loop() {
+    // Read button states
+    buttonState = digitalRead(buttonPin);
+    buttonState1 = digitalRead(buttonPin1);
+    buttonState2 = digitalRead(buttonPin2);
+
+    // Control first LED based on first button
+    if (buttonState == HIGH) {
+        digitalWrite(ledPin, HIGH);  // Turn on first LED
+    } else {
+        digitalWrite(ledPin, LOW);   // Turn off first LED
+    }
+
+    // Control second LED based on second button
+    if (buttonState1 == HIGH) {
+        digitalWrite(ledPin1, HIGH);  // Turn on second LED
+    } else {
+        digitalWrite(ledPin1, LOW);   // Turn off second LED
+    }
+
+    // Control third LED based on third button
+    if (buttonState2 == HIGH) {
+        digitalWrite(ledPin2, HIGH);  // Turn on third LED
+    } else {
+        digitalWrite(ledPin2, LOW);   // Turn off third LED
+    }
+}
